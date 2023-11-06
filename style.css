@@ -79,6 +79,7 @@ header .hero-image video {
     top: 0;
     left: 0;
     right: 0;
+    z-index: 3;
 }
 
 .navbar .logo h2 a {
@@ -774,6 +775,10 @@ footer .wrapper .bottom .right {
 /* ? Media Queries Styles */
 
 @media (max-width: 992px) {
+    header {
+        min-height: 90vh;
+    }
+
     .navbar {
         align-items: flex-start;
     }
@@ -837,6 +842,10 @@ footer .wrapper .bottom .right {
         padding: 1rem;
     }
 
+    header {
+        min-height: 80vh;
+    }
+
     h2 {
         font-size: 3rem;
     }
@@ -867,8 +876,17 @@ footer .wrapper .bottom .right {
 }
 
 @media (max-width: 576px) {
+    header {
+        min-height: 60vh;
+    }
+
+    .hero {
+        gap: 3rem;
+        padding-top: 7rem;
+    }
+
     .hero .hero-text h1 {
-        font-size: 3rem;
+        font-size: 2.4rem;
     }
 
     .hero a {
