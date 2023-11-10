@@ -14,6 +14,7 @@
     scroll-behavior: smooth;
     --accent-color: #cf5f2b;
     --active-color: #634635;
+    --font-color: #5c5c5c;
 }
 
 body {
@@ -21,7 +22,7 @@ body {
     min-height: 100vh;
     font-family: 'Open Sans', sans-serif;
     background-color: #fffbf8;
-    color: #414141;
+    color: var(--font-color);
 }
 
 .wrapper {
@@ -36,6 +37,7 @@ h2 {
     font-size: 4rem;
     font-weight: lighter;
     line-height: 1.2;
+    color: #252525;
 }
 
 /* ? Header Styles */
@@ -80,7 +82,16 @@ header .hero-image video {
     left: 0;
     right: 0;
     z-index: 3;
-    /* overflow: auto; */
+}
+
+.navbar .logo {
+    width: 22%;
+}
+
+.navbar .logo h2 {
+    font-size: 2rem;
+    width: 180px;
+    font-weight: bold;
 }
 
 .navbar .logo h2 a {
@@ -130,6 +141,7 @@ header .hero-image video {
     font-family: 'Playfair Display', serif;
     font-size: 8rem;
     line-height: 1.1;
+    letter-spacing: 2px;
     animation: from-left 1s 0.5s both;
     margin-bottom: 3rem;
 }
@@ -224,6 +236,7 @@ header .hero-image video {
 .success-info .card .title h2 {
     margin-bottom: 1rem;
     text-align: center;
+    color: white;
 }
 
 .success-info .card .title h3 {
@@ -253,14 +266,36 @@ header .hero-image video {
     grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
 }
 
+.services .card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    background-color: white;
+    transform: scale(1.5);
+    transition: all 0.5s ease-in-out;
+}
+
+.services .card:hover::before,
+.services .card:focus::before {
+    transform: scale(0);
+}
+
 .services .card {
     display: flex;
     flex-direction: column;
     gap: 2rem;
     padding: 2rem;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
-    transition: all 0.3s;
+    transition: all 0.5s;
     text-align: center;
+    z-index: 1;
+    position: relative;
+    overflow: hidden;
+    background-color: var(--accent-color);
 }
 
 .services .card p {
@@ -272,10 +307,10 @@ header .hero-image video {
     font-size: 5rem;
     color: var(--accent-color);
     margin-bottom: 1rem;
+    transition: all 0.5s ease-in-out;
 }
 
 .services .card:hover {
-    background-color: var(--accent-color);
     color: white;
 }
 
@@ -409,30 +444,30 @@ header .hero-image video {
 }
 
 .testimonials .cards-container .card {
-    display: flex;
-    gap: 2rem;
-    border: 1px solid rgb(212, 212, 212);
-    box-shadow: 5px 5px 0px var(--accent-color);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
     transition: all 0.3s;
+    padding: 2rem;
+    position: relative;
+    background-color: white;
 }
 
-.testimonials .cards-container .left-container {
-    flex: 1;
+.testimonials .cards-container .card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 6px solid var(--accent-color);
+    z-index: -1;
+    transition: all 0.1s ease-in-out;
 }
 
-.testimonials .cards-container .card:hover {
-    transform: translateY(-10px);
-}
-
-.testimonials .cards-container .right-container {
-    flex: 2;
-    padding: 1rem;
-}
-
-.testimonials .cards-container .left-container img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+.testimonials .cards-container .card:hover::before {
+    top: calc(4px * -1);
+    left: calc(4px * -1);
+    right: calc(4px * -1);
+    bottom: calc(4px * -1);
 }
 
 .testimonials .cards-container .right-container {
@@ -442,20 +477,26 @@ header .hero-image video {
 }
 
 .testimonials .cards-container .right-container p {
+    font-size: 1.6rem;
+    line-height: 1.5;
+}
+
+.testimonials .cards-container .right-container p:before,
+.testimonials .cards-container .right-container p:after {
+    font: var(--fa-font-solid);
+    color: var(--accent-color);
+    font-size: 2rem;
     font-style: italic;
-    font-size: 1.5rem;
 }
 
 .testimonials .cards-container .right-container p:before {
-    font: var(--fa-font-solid);
     content: "\f10d";
     margin-right: 0.6rem;
 }
 
 .testimonials .cards-container .right-container p:after {
-    font: var(--fa-font-solid);
     content: "\f10e";
-    margin-left: 0.6rem;
+    margin-left: 0.4rem;
 }
 
 /* ? FAQs Section Styles */
@@ -548,6 +589,7 @@ header .hero-image video {
 
 .faqs label span {
     transition: all 0.3s;
+    color: var(--accent-color);
 }
 
 .faqs input:checked ~ label span {
@@ -612,7 +654,7 @@ header .hero-image video {
 
 .contact-us button:hover {
     background-color: transparent;
-    color: #414141;
+    color: var(--font-color);
 }
 
 .contact-us button:active {
@@ -644,6 +686,11 @@ footer .wrapper .top {
 
 footer .wrapper .logo {
     margin-bottom: 2rem;
+}
+
+footer .wrapper .logo h2 {
+    width: 70%;
+    color: white;
 }
 
 footer .wrapper .top .icons-container {
@@ -930,6 +977,10 @@ footer .wrapper .bottom .right {
     .faqs .right .answer ul {
         font-size: 1.6rem;
     }
+
+    footer .wrapper .logo h2 {
+        width: 50%;
+    }
     
     footer .wrapper .bottom .right {
         text-align: start;
@@ -939,6 +990,20 @@ footer .wrapper .bottom .right {
 @media (max-width: 576px) {
     header {
         min-height: 60vh;
+    }
+
+    .navbar .logo {
+        width: 40%;
+    }
+
+    .navbar .logo h2 {
+        font-size: 1.6rem;
+        width: 100%;
+    }
+
+    .navbar .logo a {
+        display: inline-block;
+        width: 85%;
     }
 
     .hero {
@@ -961,9 +1026,12 @@ footer .wrapper .bottom .right {
         font-size: 1.4rem;
     }
 
-
     .testimonials .cards-container .card {
         flex-direction: column;
         gap: 1rem;
+    }
+
+    footer .wrapper .logo h2 {
+        width: 70%;
     }
 }
