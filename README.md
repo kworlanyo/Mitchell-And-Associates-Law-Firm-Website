@@ -1,10 +1,10 @@
-# LLM Law Firm Website
+# Mitchell & Associates Law Firm Website
 
-This is a responsive website built as my first DCI project using only HTML and CSS.
+This is a responsive website built as my first Digital Career Institute (DCI) Web Development Course project using only HTML and CSS.
 
 ## Project Overview
 
-The project presents a fully responsive website designed for the law firm "LLM," created entirely using only HTML and CSS. The purpose of this project was to simulate the development of a website for a law firm while focusing on responsiveness and clean design.
+The project presents a fully responsive website designed for the law firm "Mitchell & Associates," created entirely using only HTML and CSS. The purpose of this project was to simulate the development of a website for a law firm while focusing on responsiveness and clean design.
 
 ## Features
 
@@ -17,12 +17,16 @@ The project presents a fully responsive website designed for the law firm "LLM,"
 
 Provide a link to a live demo or screenshots showcasing your project.
 
-## Source Code
+## Source Code and Usage
 
 1. Clone the repository:
-   git clone https://github.com/your-username/LLM-law-firm-website.git
+   git clone https://github.com/kworlanyo/Mitchell-And-Associates-Law-Firm-Website.git
 
-Open the **index.html** file in your preferred browser.
+2. Open the **index.html** file in your preferred browser.
+
+## Installation
+
+This project does not require any dependencies.
 
 ## Project Structure
 - **index.html**: The main HTML file containing the structure of the website.
