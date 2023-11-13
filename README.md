@@ -14,8 +14,9 @@ The project presents a fully responsive website designed for the law firm "Mitch
 - Utilizes only HTML and CSS, no additional libraries or frameworks.
 
 ## Demo
+Click on the link below to see the live demo:
 
-Provide a link to a live demo or screenshots showcasing your project.
+https://kworlanyo.github.io/Mitchell-And-Associates-Law-Firm-Website/
 
 ## Source Code and Usage
 
